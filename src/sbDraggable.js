@@ -70,4 +70,4 @@ class sbDraggable {
 }
 
 window.sbDraggable = sbDraggable;
-//let draggable = new sbsbDraggable("#columns .column", {});
+//let sbDraggable = new sbsbDraggable("#columns .column", {});
