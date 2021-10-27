@@ -1,6 +1,6 @@
 /************************ sbDraggable ************************/
 
-.sbDraggable {
+[draggable] {
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
@@ -10,13 +10,13 @@
     -webkit-user-drag: element;
 }
 
-.sbDraggable.sb-dragging-start {
+.sb-dragging-start {
     opacity: 0.4;
 }
 
-.sbDraggable.sb-dragging-done {
-    /* border: 2px dashed #000; */
-    border-top: 2px solid blue;
+.sb-dragging-over {
+    border-top: 2px solid #ea6b3387;
 }
+
 
 /********************** End sbDragable **********************/
