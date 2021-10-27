@@ -3,6 +3,20 @@ This is an simple standalone no dependancy js library to handle drag and drop
 
 # Usage:
 
+
+sample html
+
+```
+<ul id="columns">
+  <li class="column" draggable="true"><span>A</span></li>
+  <li class="column" draggable="true"><span>B</span></li>
+  <li class="column" draggable="true"><span>C</span></li>
+  <li class="column" draggable="true"><span>D</span></li>
+  <li class="column" draggable="true"><span>E</span></li>
+</ul>
+
+```
+
 basic usage
 
 ``` 
