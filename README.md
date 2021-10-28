@@ -7,12 +7,12 @@ This is an simple standalone no dependancy js library to handle drag and drop
 sample html
 
 ```
-<ul id="columns">
-  <li class="column" draggable="true"><span>A</span></li>
-  <li class="column" draggable="true"><span>B</span></li>
-  <li class="column" draggable="true"><span>C</span></li>
-  <li class="column" draggable="true"><span>D</span></li>
-  <li class="column" draggable="true"><span>E</span></li>
+<ul id="items">
+  <li class="item" draggable="true"><span>A</span></li>
+  <li class="item" draggable="true"><span>B</span></li>
+  <li class="item" draggable="true"><span>C</span></li>
+  <li class="item" draggable="true"><span>D</span></li>
+  <li class="item" draggable="true"><span>E</span></li>
 </ul>
 
 ```
@@ -21,7 +21,7 @@ basic usage
 
 ``` 
 
-let sbDraggable = new sbDraggable("#columns .column", {}); 
+let sbDraggable = new sbDraggable("#items .item", {}); 
 
 ```
 
@@ -30,7 +30,7 @@ let sbDraggable = new sbDraggable("#columns .column", {});
 Usage with callbacks
 
 ``` 
-let sbDraggable = new sbDraggable("#columns .column", {
+let sbDraggable = new sbDraggable("#items .item", {
     afterHandleDragStart: function(element, elementInstance, sbDraggable) { return; },
     afterHandleDragOver: function(element, elementInstance, sbDraggable) { return; },
     afterHandleDragEnter: function(element, elementInstance, sbDraggable) { return; },
