@@ -5,7 +5,7 @@ class sbDraggable {
 
         let defaultOptions = {
             afterHandleDragStart: function(element, elementInstance, sbDraggable) { return; },
-            afterHandleDragOver: function(element, elementInstance,sbDraggable) { return; },
+            afterHandleDragOver: function(element, elementInstance, sbDraggable) { return; },
             afterHandleDragEnter: function(element, elementInstance, sbDraggable) { return; },
             afterHandleDragLeave: function(element, elementInstance, sbDraggable) { return; },
             afterHandleDrop: function(element, elementInstance, sbDraggable) { return; },
@@ -31,6 +31,8 @@ class sbDraggable {
         // Target (this) element is the source node.
 
         this.dragSrcEl = instance;
+
+        this.dragSrcElBounds = instance.getBoundingClientRect();
 
 
         e.dataTransfer.effectAllowed = 'move';
@@ -80,7 +82,14 @@ class sbDraggable {
         if (this.dragSrcEl != instance) {
             instance.parentNode.removeChild(this.dragSrcEl);
             //var dropHTML = e.dataTransfer.getData('text/html');
-            instance.insertAdjacentElement('beforebegin', this.dragSrcEl);
+            if (this.dragSrcElBounds.top > instance.getBoundingClientRect().top) {
+                // Move up
+                instance.insertAdjacentElement('beforebegin', this.dragSrcEl);
+            } else {
+                // Move down
+                instance.insertAdjacentElement('afterend', this.dragSrcEl);
+            }
+
             var dropElement = instance.previousSibling;
             this.addDnDHandlers(dropElement, this);
 
@@ -109,6 +118,5 @@ class sbDraggable {
         element.addEventListener('dragend', function(event) { instance.handleDragEnd(event, this) }, false);
     }
 }
-
 window.sbDraggable = sbDraggable;
 //let sbDraggable = new sbDraggable("#columns .column", {});
