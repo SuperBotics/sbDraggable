@@ -40,5 +40,5 @@ let sbDraggable = new sbDraggable("#items .item", {
 }); 
 ```
 
-# Credits to 
+### Credits
 [https://codepen.io/retrofuturistic/pen/tlbHE](https://codepen.io/retrofuturistic/pen/tlbHE)
